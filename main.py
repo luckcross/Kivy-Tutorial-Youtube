@@ -3,6 +3,9 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.properties import ObjectProperty
 
+# from kivy.core.window import Window
+# Window.size = (800, 600)
+
 class Container(BoxLayout):
     pass
 

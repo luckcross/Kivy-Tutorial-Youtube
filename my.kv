@@ -1,5 +1,8 @@
 #:kivy 1.11.1
-<Container>:
+<ItemLabel@Label>:
+    font_size: '25sp'
+
+<Container@GridLayout>:
     GridLayout:
         rows: 3
 
@@ -14,24 +17,38 @@
             BoxLayout:
                 orientation: 'vertical'
 
-                Label:
-                    text: 'Value 1'
-                    font_size: '25sp'
+                ItemLabel:
+                    text: 'Salt'
 
-                Label:
-                    text: 'Value 2'
-                    font_size: '25sp'
+                ItemLabel:
+                    text: 'Nitro salt'
+
+                ItemLabel:
+                    text: 'Start cultures'
+
+                ItemLabel:
+                    text: 'Monosugars'
+
+                ItemLabel:
+                    text: 'Salting time'
 
             BoxLayout:
                 orientation: 'vertical'
 
-                Label:
-                    text: 'V 1'
-                    font_size: '25sp'
+                ItemLabel:
+                    text: '0'
 
-                Label:
-                    text: 'V 2'
-                    font_size: '25sp'
+                ItemLabel:
+                    text: '0'
+
+                ItemLabel:
+                    text: '0'
+
+                ItemLabel:
+                    text: '0'
+
+                ItemLabel:
+                    text: '0'
 
         BoxLayout:
             Button:
