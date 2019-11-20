@@ -1,0 +1,27 @@
+#:kivy 1.11.1
+<Container>:
+    orientation: 'vertical'
+    padding: 50
+    spacing: 50
+
+    text_input: text_input
+    label_widget: label_widget
+
+    TextInput:
+        id: text_input
+        font_size: 40
+        multiline: False
+        text: ''
+    Label:
+        id: label_widget
+        font_size: 40
+        text: 'Some text'
+
+    FloatLayout:
+        Button:
+            pos_hint: {'center_x': 0.5, 'y': 0.1}
+            text: 'Go1'
+            font_size: 40
+            on_release:
+                #self.text = 'New text'
+                root.change_label_text()
