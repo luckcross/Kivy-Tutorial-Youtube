@@ -1,21 +1,43 @@
 #:kivy 1.11.1
-<ItemLabel@Label>:
+#:import MDLabel kivymd.label.MDLabel
+#:import MDTextField kivymd.textfields.MDTextField
+#:import MDRaisedButton kivymd.button.MDRaisedButton
+
+<ItemLabel@MDLabel>:
     font_size: '25sp'
+    haling: 'left'
+    valign: 'middle'
+    text_size: self.size
 
 <Container@GridLayout>:
+    text_input: text_input
+    salt: salt
+    nitro: nitro
+    monosugars: monosugars
+    starts: starts
+    time: time
     GridLayout:
         rows: 3
-
         AnchorLayout:
             anchor_y: 'top'
+            size_hint: 1, 0.2
+            padding: 30
 
-            TextInput:
+            MDTextField:
+                id: text_input
+                multiline: False
+                font_size: '45sp'
+                input_type: 'number'
+                input_filter: 'int'
+                hint_text: 'Weight in grams'
 
         GridLayout:
             cols: 2
+            padding: [50, 0, 0, 0]
 
             BoxLayout:
                 orientation: 'vertical'
+                size_hint: 0.5, 1
 
                 ItemLabel:
                     text: 'Salt'
@@ -36,20 +58,31 @@
                 orientation: 'vertical'
 
                 ItemLabel:
-                    text: '0'
+                    id: salt
+                    #text: '0'
 
                 ItemLabel:
-                    text: '0'
+                    id: nitro
+                    #text: '0'
 
                 ItemLabel:
-                    text: '0'
+                    id: monosugars
+                    #text: '0'
 
                 ItemLabel:
-                    text: '0'
+                    id: starts
+                    #text: '0'
 
                 ItemLabel:
-                    text: '0'
+                    id: time
+                    #text: '0'
 
         BoxLayout:
-            Button:
+            size_hint: 0.9, 0.15
+            padding: [30, 0, 30, 20]
+            MDRaisedButton:
                 text: 'Go'
+                size_hint: 1, 0.9
+                font_size: '30sp'
+                on_release:
+                    root.calculate()
