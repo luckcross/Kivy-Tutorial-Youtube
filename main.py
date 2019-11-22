@@ -6,6 +6,8 @@ from kivy.properties import ObjectProperty
 from kivy.config import Config
 Config.set('kivy', 'keyboard_game', 'systemanddock')
 
+from kivymd.theming import ThemeManager
+
 # from kivy.core.window import Window
 # Window.size = (800, 600)
 
@@ -40,7 +42,11 @@ class Container(BoxLayout):
         self.time.text = ingr.get('salting_time')
 
 class MyApp(App):
+    theme_cls = ThemeManager()
+    title = 'The Coppa Calc'
+
     def build(self):
+        self.theme_cls.theme_style = 'Light'
         return Container()
 
 if __name__ == '__main__':
